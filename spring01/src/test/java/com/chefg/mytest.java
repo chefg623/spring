@@ -1,18 +1,17 @@
 package com.chefg;
 
 import com.chefg.pojo.hello;
+import com.chefg.pojo.student;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class mytest {
-    public static void main(String[] args) {
-        //获取上下文对象
-        ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-        hello hello = (hello) context.getBean("hello");
-
-        System.out.println(hello);
-
-
+    @Test
+    public void test1(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        student student= (com.chefg.pojo.student) context.getBean("student");
+        System.out.println(student.getName());
     }
 
 }
